@@ -1,0 +1,33 @@
+1. crontab
+auto set backup drive in standby mode
+
+2. postfix
+use exmail fengqi.tk
+
+3. apt source
+use ustc
+enable pve-no-subscription
+
+4. grub cmdline
+replace quite to splash
+enable IOMMU
+enable PCI passthrough 
+https://pve.proxmox.com/wiki/Pci_passthrough
+Changing CGroup Version to v1
+
+5. security
+change root password
+use u2f
+
+6. lvm
+global_filer sdb sdc
+
+7. hdparm
+set sdb,sdc standby 15min
+
+8. vim
+.vimrc
+
+9. git
+~/.gitconfig
+https://github.com/fengqi/pve-scripts
