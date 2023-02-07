@@ -6,13 +6,13 @@ if [ "$name" -gt 0 ] 2>/dev/null ;then
     lxc-attach $name
     exit 0
 else
-    id=$(pvesh get /nodes/pve/lxc|grep running|grep $name|awk '{print $4}')
+    id=$(pvesh get /nodes/pve/lxc|grep running|grep $name|awk '{print $4}'|head -1)
     if [ -n "$id" ]; then
         lxc-attach $id
         exit 0
     fi
 
-    name=$(qm list|grep running|grep $name|awk '{print $2}')
+    name=$(qm list|grep running|grep $name|awk '{print $2}'|head -1)
     user=root
     if [ -n "$name" ]; then
         if [ "$name" = "work" ];then
